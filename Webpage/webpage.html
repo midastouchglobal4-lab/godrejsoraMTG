@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Godrej SORA</title>
+  <meta name="description" content="Explore Godrej SORA — a premium residential offering. Get brochures, floor plans, prices & site visits with MIDAS TOUCH GLOBAL. Call +91-9871113934." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0a1224; /* deep navy */
+      --bg-2:#0f1a36;
+      --pri:#e0b15b; /* soft gold */
+      --pri-2:#fad487;
+      --txt:#eef2f7;
+      --muted:#b8c2d9;
+      --accent:#18b6a5;
+      --card:#0d1630;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--txt); background:linear-gradient(180deg,var(--bg),#0b1530 60%, #0a0f22);}    
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1200px, 92%); margin-inline:auto}
+    .btn{display:inline-block; padding:14px 22px; border-radius:999px; background:linear-gradient(90deg,var(--pri), var(--pri-2)); color:#182033; font-weight:700; letter-spacing:.3px; box-shadow:var(--shadow); border:none; cursor:pointer}
+    .btn.outline{background:transparent; color:var(--pri); border:1px solid var(--pri);}
+    header{
+      position:sticky; top:0; z-index:20; backdrop-filter: blur(12px); background:rgba(10,18,36,.6); border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,var(--pri),var(--pri-2)); box-shadow:var(--shadow)}
+    .brand h1{font-size:18px; margin:0; line-height:1.1; font-weight:800}
+    .contact-strip{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .contact-strip a{font-weight:600; color:var(--pri)}
+
+    /* Hero */
+    .hero{position:relative; isolation:isolate;}
+    .hero .container{display:grid; grid-template-columns:1.2fr .8fr; gap:36px; padding:64px 0}
+    @media(max-width:960px){.hero .container{grid-template-columns:1fr; padding:38px 0}}
+    .hero-copy h2{font-size:44px; margin:6px 0 14px; letter-spacing:.2px}
+    .hero-copy p{color:var(--muted); font-size:16px; line-height:1.7}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 26px}
+    .chip{border:1px solid rgba(255,255,255,.12); padding:8px 12px; border-radius:999px; color:#d9e1f2; font-size:13px; backdrop-filter: blur(6px); background:rgba(255,255,255,.04)}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); padding:22px; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .hero-form{display:grid; gap:12px}
+    .hero-form input, .hero-form select, .hero-form textarea{width:100%; padding:14px 14px; border-radius:12px; background:#0b1430; border:1px solid rgba(255,255,255,.12); color:#eaf0ff}
+    .hero-form label{font-size:12px; color:#c7d2ee}
+    .hero-side{display:grid; gap:16px}
+    .stat{display:flex; gap:12px; align-items:center; background:linear-gradient(180deg,rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); padding:16px; border-radius:14px}
+    .stat .dot{width:12px; height:12px; border-radius:999px; background:var(--accent)}
+
+    /* Highlights */
+    section{padding:54px 0}
+    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    @media(max-width:960px){.cards{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.05), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); padding:20px; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px}
+    .muted{color:var(--muted)}
+
+    /* Amenities Grid */
+    .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+    @media(max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
+    .amenity{padding:16px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg,rgba(255,255,255,.04), rgba(255,255,255,.02))}
+
+    /* Gallery */
+    .gallery{display:grid; grid-template-columns:2fr 1fr; gap:12px}
+    .gallery div{border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
+    .gallery .col{display:grid; gap:12px}
+    @media(max-width:960px){.gallery{grid-template-columns:1fr}}
+    
+    /* Video Container */
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      overflow: hidden;
+      border-radius: 16px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Location */
+    .loc{display:grid; grid-template-columns:1.2fr .8fr; gap:18px}
+    @media(max-width:960px){.loc{grid-template-columns:1fr}}
+    iframe{width:100%; height:360px; border:0; border-radius:16px; filter:saturate(1.2) contrast(1.05)}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.08); padding:34px 0; background:linear-gradient(180deg, #0a0f22, #050913)}
+    .footgrid{display:grid; grid-template-columns:2fr 1fr 1fr; gap:20px}
+    @media(max-width:960px){.footgrid{grid-template-columns:1fr}}
+    small.disclaimer{display:block; color:#9fb0d0; opacity:.8; line-height:1.6}
+
+    /* Simple floating CTA */
+    .float-cta{position:fixed; bottom:16px; right:16px; display:flex; gap:10px; z-index:40}
+    .float-cta a{padding:12px 16px; border-radius:999px; background:#0e1a38; border:1px solid rgba(255,255,255,.12)}
+    
+    /* Loading spinner */
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: var(--pri);
+      animation: spin 1s ease-in-out infinite;
+      display: none;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--card);
+      color: var(--txt);
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      display: none;
+    }
+  </style>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GODREJ SORA",
+    "url": "https://midastouch-global.com/",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+91-9871113934",
+      "contactType": "sales",
+      "email": "info@midastouch-global.com"
+    }]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Residence",
+    "name": "Godrej SORA",
+    "url": "",
+    "brand": {"@type":"Brand","name":"Godrej"},
+    "offers": {"@type":"Offer","availability":"https://schema.org/PreOrder"}
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div aria-hidden="true">
+          <img src="./logo.png" alt="">
+        </div>
+      
+      </div>
+      <div class="contact-strip">
+        <a href="tel:+919871113934">📞 +91-9871113934</a>
+        <span>•</span>
+        <a class="btn outline" href="#enquire">Enquire Now</a>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <div class="badges">
+            <span class="chip">New Launch</span>
+            <span class="chip">Premium Residences</span>
+            <span class="chip">By Godrej</span>
+          </div>
+          <h2>Godrej SORA</h2>
+          <p>Experience refined living at <strong>Godrej SORA</strong>. Discover thoughtfully planned residences, resort‑style amenities, and seamless city connectivity — curated for comfort, convenience, and an elevated lifestyle. Get brochures, floor plans, and a personalized site visit with <strong>Godrej SoraL</strong>.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px">
+            <a class="btn" href="#enquire">Get Best Offer</a>
+            <a class="btn outline" href="#highlights">View Highlights</a>
+          </div>
+          <div style="margin-top:26px; display:grid; gap:12px">
+            <div class="stat"><span class="dot"></span><div>Dedicated Relationship Manager</div></div>
+            <div class="stat"><span class="dot"></span><div>Assistance with Pricing, Floor Plans & Site Visits</div></div>
+            <div class="stat"><span class="dot"></span><div>Zero Brokerage — Direct Developer Allocation</div></div>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="hero-card">
+            <h3 style="margin:0 0 4px">Request a Call Back</h3>
+            <p class="muted" style="margin:0 0 14px">Share your details — our team will connect with you shortly.</p>
+            <form id="leadForm" class="hero-form" action="https://formsubmit.co/info@midastouch-global.com" method="POST" autocomplete="on">
+              <input type="hidden" name="_subject" value="New Godrej SORA Enquiry">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <input type="hidden" name="_captcha" value="false">
+              <div>
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+              </div>
+              <div>
+                <label for="phone">Mobile Number</label>
+                <input id="phone" name="phone" type="tel" placeholder="+91-XXXXXXXXXX" required>
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+              </div>
+              <div>
+                <label for="config">Configuration</label>
+                <select id="config" name="config">
+                  <option value="">Select</option>
+                  <option>3 BHK</option>
+                  <option>4 BHK</option>
+                  <option>Penthouse</option>
+                </select>
+              </div>
+              <div>
+                <label for="message">Message (Optional)</label>
+                <textarea id="message" name="message" rows="3" placeholder="I'd like prices & a site visit..."></textarea>
+              </div>
+              <button class="btn" type="submit" id="submitBtn1">
+                <span id="submitText1">Enquire Now</span>
+                <span id="submitSpinner1" class="spinner"></span>
+              </button>
+              <p id="formNote" class="muted" style="margin:6px 0 0"></p>
+            </form>
+          </div>
+          <div class="hero-card" aria-hidden="true">
+            <img src="https://www.godrejsora53.in/img/gal4.webp" alt="Godrej SORA building exterior" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights">
+      <div class="container">
+        <h3 style="margin:0 0 14px">Project Highlights</h3>
+        <div class="cards">
+          <div class="card"><h3>Modern Architecture</h3><p class="muted">Striking façade, efficient layouts, and expansive glazing for brighter interiors.</p></div>
+          <div class="card"><h3>Resort‑Style Amenities</h3><p class="muted">Clubhouse, pool, fitness zones, landscaped courts, and children's play.</p></div>
+          <div class="card"><h3>Smart & Secure</h3><p class="muted">Controlled access, CCTV in key areas, and app‑enabled visitor management.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities -->
+    <section id="amenities" style="background:linear-gradient(180deg, var(--bg-2), transparent)">
+      <div class="container">
+        <h3 style="margin:0 0 14px">Key Amenities</h3>
+        <div class="grid">
+          <div class="amenity">Infinity‑edge Pool</div>
+          <div class="amenity">Grand Clubhouse</div>
+          <div class="amenity">Fitness & Yoga Studio</div>
+          <div class="amenity">Multi‑Purpose Courts</div>
+          <div class="amenity">Kids' Play & Learning</div>
+          <div class="amenity">Pet‑Friendly Park</div>
+          <div class="amenity">Jogging & Cycle Track</div>
+          <div class="amenity">Lush Central Greens</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+      <div class="container">
+        <h3 style="margin:0 0 14px">Gallery (Illustrative)</h3>
+        <div class="gallery">
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/WvJZzAqJlgw" 
+              title="Godrej SORA Video" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="col">
+            <img src="https://64.media.tumblr.com/560ffcf6d67e248b54d52830a2085511/b6f0f4ff3b688de4-77/s1280x1920/9ce349c5bfee7108ba00df956487435667eed447.jpg" alt="Godrej SORA interior design" />
+            <img src="https://www.godrejsora53.in/img/gal3.webp" alt="Godrej SORA amenities" />
+          </div>
+        </div>
+        <p class="muted" style="margin-top:10px">*Images are concept renders / placeholders for representation only.</p>
+      </div>
+    </section>
+
+    <!-- Floor Plans -->
+    <section id="plans" style="background:linear-gradient(180deg, var(--bg-2), transparent)">
+      <div class="container">
+        <h3 style="margin:0 0 14px">Configurations & Floor Plans</h3>
+        <div class="cards">
+          <div class="card"><h3>1–2 BHK</h3><p class="muted">Efficient homes with smart storage and balcony views.</p><a class="btn outline" href="#enquire">Get Brochure</a></div>
+          <div class="card"><h3>3–4 BHK</h3><p class="muted">Spacious living, utility, and flexible family spaces.</p><a class="btn outline" href="#enquire">Request Plans</a></div>
+          <div class="card"><h3>Penthouses</h3><p class="muted">Exclusive terraces and premium finishing (limited).</p><a class="btn outline" href="#enquire">Check Availability</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section id="location">
+      <div class="container loc">
+        <div>
+          <h3 style="margin:0 0 14px">Location Advantage</h3>
+          <p class="muted">Well‑connected address with quick access to business districts, schools, healthcare, and retail hubs. Commute with ease and live minutes away from daily conveniences.</p>
+          <ul class="muted" style="line-height:1.9">
+            <li>Proximity to major arterials & transit points</li>
+            <li>Educational & healthcare institutes within short drive</li>
+            <li>Retail, F&amp;B and entertainment zones nearby</li>
+          </ul>
+        </div>
+        <div>
+          <!-- Updated Google Maps embed URL -->
+          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.698475100058!2d77.06797697539998!3d28.40896257575612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23a2bce2d943%3A0x7ea8c3ec5a77de7c!2sMidas%20Touch%20Global!5e0!3m2!1sen!2sin!4v1726836340000!5m2!1sen!2sin"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enquiry -->
+    <section id="enquire" style="background:linear-gradient(180deg, var(--bg-2), transparent)">
+      <div class="container">
+        <div class="card" style="display:grid; grid-template-columns:1fr 1fr; gap:18px">
+          <div>
+            <h3 style="margin:0 0 6px">Talk to Us</h3>
+            <p class="muted">Call <a href="tel:+919871113934">+91‑9871113934</a> or email <a href="mailto:info@midastouch-global.com">info@midastouch-global.com</a>. Share your requirements and we'll tailor a shortlist for you.</p>
+            <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
+              <a class="btn" href="https://wa.me/919871113934?text=Hi%20Team%20MIDAS%20TOUCH%20GLOBAL%2C%20I%20am%20interested%20in%20Godrej%20SORA" target="_blank" rel="noopener">Chat on WhatsApp</a>
+              <a class="btn outline" href="tel:+919871113934">Call Now</a>
+            </div>
+          </div>
+          <div>
+            <form id="leadForm2" class="hero-form" action="https://formsubmit.co/info@midastouch-global.com" method="POST">
+              <input type="hidden" name="_subject" value="New Godrej SORA Contact Form">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <input type="hidden" name="_captcha" value="false">
+              <div>
+                <label for="name2">Full Name</label>
+                <input id="name2" name="name" type="text" placeholder="Your name" required>
+              </div>
+              <div>
+                <label for="phone2">Mobile Number</label>
+                <input id="phone2" name="phone" type="tel" placeholder="+91-XXXXXXXXXX" required>
+              </div>
+              <div>
+                <label for="email2">Email</label>
+                <input id="email2" name="email" type="email" placeholder="you@example.com" required>
+              </div>
+              <div>
+                <label for="msg2">Message</label>
+                <textarea id="msg2" name="message" rows="3" placeholder="I'm interested in Godrej SORA. Please share pricing & availability."></textarea>
+              </div>
+              <button class="btn" type="submit" id="submitBtn2">
+                <span id="submitText2">Submit</span>
+                <span id="submitSpinner2" class="spinner"></span>
+              </button>
+              <p id="formNote2" class="muted" style="margin:6px 0 0"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footgrid">
+      <div>
+        <h4 style="margin:0 0 10px">GODREJ SORA</h4>
+        <small class="disclaimer">This page is a marketing showcase to facilitate information & assisted sales support for the project named herein. All images are for representation only. Details are subject to change by the developer. Please verify all information including pricing, availability, and statutory approvals at the time of booking.</small>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <div class="muted" style="margin-top:8px">
+          <div>📞 <a href="tel:+919871113934">+91-9871113934</a></div>
+                 </div>
+      </div>
+      <div>
+        <strong>Quick Links</strong>
+        <div class="muted" style="margin-top:8px; display:grid; gap:6px">
+          <a href="#highlights">Highlights</a>
+          <a href="#amenities">Amenities</a>
+          <a href="#plans">Floor Plans</a>
+          <a href="#location">Location</a>
+          <a href="#enquire">Enquiry</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="float-cta">
+    <a href="tel:+919871113934">📞 Call</a>
+    <a href="https://wa.me/919871113934?text=Hi%20Team%20MIDAS%20TOUCH%20GLOBAL%2C%20I%20am%20interested%20in%20Godrej%20SORA" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Handle form submission with FormSubmit
+    function handleForm(formId, noteId, submitBtnId, submitTextId, submitSpinnerId) {
+      const form = document.getElementById(formId);
+      const note = document.getElementById(noteId);
+      const submitBtn = document.getElementById(submitBtnId);
+      const submitText = document.getElementById(submitTextId);
+      const submitSpinner = document.getElementById(submitSpinnerId);
+      const toast = document.getElementById('toast');
+      
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Show loading state
+        submitText.style.display = 'none';
+        submitSpinner.style.display = 'inline-block';
+        submitBtn.disabled = true;
+        
+        try {
+          // Create form data
+          const formData = new FormData(form);
+          
+          // Send the form data using fetch
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            // Show success message
+            showToast('Thank you! We will contact you shortly.', 'success');
+            form.reset();
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch (error) {
+          // Show error message
+          showToast('There was a problem submitting your form. Please try again or contact us directly.', 'error');
+        } finally {
+          // Reset button state
+          submitText.style.display = 'inline-block';
+          submitSpinner.style.display = 'none';
+          submitBtn.disabled = false;
+        }
+      });
+    }
+    
+    // Show toast notification
+    function showToast(message, type) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.style.display = 'block';
+      toast.style.background = type === 'success' ? 'var(--accent)' : '#ff6b6b';
+      
+      // Hide toast after 5 seconds
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 5000);
+    }
+    
+    // Initialize both forms
+    handleForm('leadForm', 'formNote', 'submitBtn1', 'submitText1', 'submitSpinner1');
+    handleForm('leadForm2', 'formNote2', 'submitBtn2', 'submitText2', 'submitSpinner2');
+  </script>
+
+</body>
+</html>
